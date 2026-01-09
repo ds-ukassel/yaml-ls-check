@@ -1,16 +1,16 @@
 {
-  "name": "yaml-ls-check",
+  "name": "@ds-ukassel/yaml-ls-check",
   "version": "1.5.1",
   "description": "Library and tool used to validate YAML files against one or more schemas utilizing the yaml-language-server project.",
   "license": "MIT",
-  "author": "InoUno <inoiown@gmail.com>",
-  "homepage": "https://github.com/InoUno/yaml-ls-check#readme",
+  "author": "Distributed Systems Group, University of Kassel",
+  "homepage": "https://github.com/ds-ukassel/yaml-ls-check#readme",
   "bugs": {
-    "url": "https://github.com/InoUno/yaml-ls-check/issues"
+    "url": "https://github.com/ds-ukassel/yaml-ls-check/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/InoUno/yaml-ls-check.git"
+    "url": "https://github.com/ds-ukassel/yaml-ls-check.git"
   },
   "keywords": [
     "yaml",

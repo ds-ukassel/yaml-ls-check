@@ -1,4 +1,4 @@
-# yaml-ls-check [![CI](https://github.com/InoUno/yaml-ls-check/actions/workflows/main.yml/badge.svg)](https://github.com/InoUno/yaml-ls-check/actions/workflows/main.yml) [![npm version](https://badge.fury.io/js/yaml-ls-check.svg)](https://badge.fury.io/js/yaml-ls-check)
+# yaml-ls-check [![CI](https://github.com/ds-ukassel/yaml-ls-check/actions/workflows/main.yml/badge.svg)](https://github.com/ds-ukassel/yaml-ls-check/actions/workflows/main.yml) [![npm version](https://badge.fury.io/js/yaml-ls-check.svg)](https://badge.fury.io/js/yaml-ls-check)
 
 Provides an easy way to validate YAML files against given schemas utilizing the [yaml-language-server](https://github.com/redhat-developer/yaml-language-server) project.
 
@@ -32,7 +32,7 @@ If you have a `.vscode/settings.json` in the root of your repository directory, 
 ```yaml
 steps:
 - uses: actions/checkout@v2
-- uses: InoUno/yaml-ls-check@develop
+- uses: ds-ukassel/yaml-ls-check@v1.5.1
 ```
 
 Additional settings for it are:
@@ -44,13 +44,13 @@ Additional settings for it are:
 ```yaml
 steps:
 - uses: actions/checkout@v2
-- uses: InoUno/yaml-ls-check@develop
+- uses: ds-ukassel/yaml-ls-check@v1.5.1
   with:
     root: data
     schemaMapping: |
-    {
+      {
         "schemas/my-schema.json": [ "files/*.yml" ]
-    }
+      }
 ```
 
 
