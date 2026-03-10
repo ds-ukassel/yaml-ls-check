@@ -7,12 +7,12 @@ async function run() {
     program
         .command('dir', { isDefault: true })
         .argument('<root-directory>')
-        .argument('[exclude-patterns...]', 'glob patterns for YAML files to be excluded from validation', [])
+        .option('--exclude <patterns...>', 'glob patterns for YAML files to be excluded from validation')
         .option('--yamlVersion', 'YAML version to use for validation')
         .description('Validate YAML files of a directory.')
-        .action(async (rootPath, excludePatterns, options) => {
+        .action(async (rootPath, excludedPatterns, options) => {
             if (rootPath) {
-                const errors = await validateDirectory({ yamlVersion: options.yamlVersion }, rootPath, excludePatterns);
+                const errors = await validateDirectory({ yamlVersion: options.yamlVersion }, rootPath, excludedPatterns["exclude"] ?? []);
                 if (errors !== undefined && errors.length > 0) {
                     process.exit(1);
                 }

@@ -21,7 +21,7 @@ ylsc <directory>
 ylsc dir <directory>
 
 # Optionally, you can provide a list of files to exclude from validation. File paths can be given as glob patterns.
-ylsc <directory> <excluded...>
+ylsc <directory> --exclude <files...>
 
 # Validate given YAML files against the given schema.
 # Schema can either be a local or remote one. File paths can be given as glob patterns.
@@ -54,6 +54,8 @@ steps:
       {
         "schemas/my-schema.json": [ "files/*.yml" ]
       }
+    excludedFiles: |
+      "helm/**/*.yaml"
 ```
 
 
