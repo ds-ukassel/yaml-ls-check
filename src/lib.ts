@@ -187,9 +187,13 @@ export async function validateDirectory(
     excludePatterns: string[],
     schemaMapping?: SchemaMapping,
 ) {
-    console.log(excludePatterns)
     console.log(`Looking for YAML files to validate at: ${rootDir}`);
-    const filePaths = await glob('**/*.{yml,yaml}', { cwd: rootDir, nodir: true, dot: true, ignore: excludePatterns });
+    const filePaths = await glob('**/*.{yml,yaml}', {
+        cwd: rootDir,
+        nodir: true,
+        dot: true,
+        ignore: excludePatterns,
+    });
 
     return validateAndOutput(filePaths, { ...settings, rootDir, schemaMapping });
 }
