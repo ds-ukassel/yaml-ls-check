@@ -20,6 +20,9 @@ The CLI should now be accessible as `yaml-ls-check` or the short-hand `ylsc`, an
 ylsc <directory>
 ylsc dir <directory>
 
+# Optionally, you can provide a list of files to exclude from validation. File paths can be given as glob patterns.
+ylsc <directory> --exclude <files...>
+
 # Validate given YAML files against the given schema.
 # Schema can either be a local or remote one. File paths can be given as glob patterns.
 ylsc schema <schema> <files...>
@@ -39,7 +42,7 @@ Additional settings for it are:
 
 * `root`: If the repository root should not act as root for the validation.
 * `schemaMapping`: Specify mapping of schema to file patterns that should match the schema. This overwrites the mapping found in any potential `.vscode/settings.json` file.
-
+* `excludedFiles`: A list of file paths or glob patterns to exclude from validation relative to the root.
 
 ```yaml
 steps:
@@ -51,6 +54,8 @@ steps:
       {
         "schemas/my-schema.json": [ "files/*.yml" ]
       }
+    excludedFiles: |
+      "helm/**/*.yaml"
 ```
 
 

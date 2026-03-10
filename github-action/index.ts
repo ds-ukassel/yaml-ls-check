@@ -30,7 +30,9 @@ async function run() {
         console.log('Using YAML specification version:', yamlVersion);
     }
 
-    const results = await validateDirectory({ yamlVersion }, rootPath, schemaMapping);
+    let excludePatterns: string[] = core.getMultilineInput('excludedFiles', { trimWhitespace: true });
+
+    const results = await validateDirectory({ yamlVersion }, rootPath, excludePatterns, schemaMapping);
 
     if (results && results.length > 0) {
         for (const result of results) {

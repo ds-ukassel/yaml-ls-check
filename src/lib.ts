@@ -178,11 +178,22 @@ async function validateAndOutput(files: string[], settings: Settings) {
  * Validates all YAML files found in the given directory.
  * It will automatically use the schema mapping in .vscode/settings.json, if present.
  * @param rootDir Path to root directory containing the YAML files to be validated.
+ * @param excludePatterns List of glob patterns for YAML files to be excluded from validation.
  * @returns A list errors found in the files.
  */
-export async function validateDirectory(settings: BaseSettings, rootDir: string, schemaMapping?: SchemaMapping) {
+export async function validateDirectory(
+    settings: BaseSettings,
+    rootDir: string,
+    excludePatterns: string[],
+    schemaMapping?: SchemaMapping,
+) {
     console.log(`Looking for YAML files to validate at: ${rootDir}`);
-    const filePaths = await glob('**/*.{yml,yaml}', { cwd: rootDir, nodir: true, dot: true });
+    const filePaths = await glob('**/*.{yml,yaml}', {
+        cwd: rootDir,
+        nodir: true,
+        dot: true,
+        ignore: excludePatterns,
+    });
 
     return validateAndOutput(filePaths, { ...settings, rootDir, schemaMapping });
 }
