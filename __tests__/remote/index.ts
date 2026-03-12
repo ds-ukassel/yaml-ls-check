@@ -10,6 +10,11 @@ function validateFile(filename: string, schemaUri: string) {
 }
 
 describe('validate YAML with remote schema', () => {
+    it('valid bower file using redirect', async () => {
+        const invalidFiles = await validateFile('bower-valid.yml', 'https://json.schemastore.org/bower.json');
+        expect(invalidFiles.length).toBe(0);
+    });
+
     it('valid bower file', async () => {
         const invalidFiles = await validateFile('bower-valid.yml', 'https://www.schemastore.org/bower.json');
         expect(invalidFiles.length).toBe(0);
