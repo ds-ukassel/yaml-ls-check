@@ -38,10 +38,12 @@
         "lint": "prettier --check '**/*.ts'",
         "test": "jest"
     },
+    "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be",
     "devDependencies": {
         "@types/jest": "^30.0.0",
         "@types/marked-terminal": "^6.1.1",
-        "@types/node": "^25.4.0",
+        "@types/node": "^24.12.0",
+        "esbuild": "^0.27.4",
         "jest": "^30.3.0",
         "npm-run-all": "^4.1.5",
         "prettier": "^3.8.1",
@@ -49,15 +51,14 @@
         "ts-jest": "^29.4.6",
         "ts-loader": "^9.5.4",
         "ts-node": "^10.9.2",
-        "typescript": "^5.9.3",
-        "esbuild": "^0.27.4"
+        "typescript": "^5.9.3"
     },
     "dependencies": {
         "@actions/core": "^3.0.0",
         "commander": "^14.0.3",
         "glob": "^13.0.6",
-        "marked-terminal": "^7.3.0",
         "marked": "^15.0.12",
+        "marked-terminal": "^7.3.0",
         "vscode-json-languageservice": "^5.7.2",
         "vscode-languageserver-textdocument": "^1.0.12",
         "vscode-languageserver-types": "^3.17.5",
@@ -66,6 +67,5 @@
     },
     "resolutions": {
         "lodash@^4": "^4.17.23"
-    },
-    "packageManager": "pnpm@10.30.3+sha512.c961d1e0a2d8e354ecaa5166b822516668b7f44cb5bd95122d590dd81922f606f5473b6d23ec4a5be05e7fcd18e8488d47d978bbe981872f1145d06e9a740017"
+    }
 }
