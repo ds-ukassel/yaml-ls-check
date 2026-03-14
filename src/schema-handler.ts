@@ -1,5 +1,4 @@
 import * as fs from 'fs';
-import * as https from 'https';
 
 import { URI } from 'vscode-uri';
 
@@ -44,23 +43,7 @@ export function createSchemaRequestHandler(rootPath?: string): SchemaRequestServ
             });
         }
 
-        // Fall back to fetching with a GET request
-        return new Promise<string>((callback, error) => {
-            let chunks: string[] = [];
-            const request = https.get(uri, (res) => {
-                res.setEncoding('utf8');
-
-                res.on('data', (data: Buffer) => {
-                    chunks.push(data.toString());
-                });
-
-                res.on('end', () => {
-                    callback(chunks.join(''));
-                });
-            });
-
-            request.on('error', (err) => error(err));
-            request.end();
-        });
+        const response = await fetch(uri);
+        return response.ok ? response.text() : Promise.reject(`Unable to load schema at ${uri}: ${response.statusText}`);
     };
 }
