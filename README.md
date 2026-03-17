@@ -35,7 +35,7 @@ If you have a `.vscode/settings.json` in the root of your repository directory, 
 ```yaml
 steps:
 - uses: actions/checkout@v2
-- uses: ds-ukassel/yaml-ls-check@v1.6.0
+- uses: ds-ukassel/yaml-ls-check@v2.0.0
 ```
 
 Additional settings for it are:
@@ -47,7 +47,7 @@ Additional settings for it are:
 ```yaml
 steps:
 - uses: actions/checkout@v2
-- uses: ds-ukassel/yaml-ls-check@v1.6.0
+- uses: ds-ukassel/yaml-ls-check@v2.0.0
   with:
     root: data
     schemaMapping: |
