@@ -16,7 +16,7 @@ outputs:
 runs:
   using: 'node24'
   main: 'github-action/dist/index.js'
-  pre: action-pre.sh
+  pre: action-pre.js
 branding:
   color: green
   icon: file-text
