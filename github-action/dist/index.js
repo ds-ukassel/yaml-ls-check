@@ -1,3 +1,4 @@
+console.log(process.cwd());
 "use strict";var xSe=Object.create;var ov=Object.defineProperty;var LSe=Object.getOwnPropertyDescriptor;var QSe=Object.getOwnPropertyNames;var PSe=Object.getPrototypeOf,USe=Object.prototype.hasOwnProperty;var T=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),GSe=(e,t)=>{for(var r in t)ov(e,r,{get:t[r],enumerable:!0})},
 qSe=(e,t,r,n)=>{if(t&&typeof t=="object"||typeof t=="function")for(let i of QSe(t))!USe.call(e,i)&&i!==r&&ov(e,i,{get:()=>t[i],
 enumerable:!(n=LSe(t,i))||n.enumerable});return e};var qn=(e,t,r)=>(r=e!=null?xSe(PSe(e)):{},qSe(t||!e||!e.__esModule?ov(r,"default",{value:e,enumerable:!0}):r,e));var G3=T(oh=>{"use strict";var rot=require("net"),VSe=require("tls"),uv=require("http"),Q3=require("https"),$Se=require("events"),
