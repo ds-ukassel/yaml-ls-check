@@ -17,8 +17,6 @@ runs:
   using: 'node24'
   main: 'github-action/dist/index.mjs'
   pre: action-pre.js
-  env:
-    NODE_OPTIONS: --import=extensionless/register
 branding:
   color: green
   icon: file-text
