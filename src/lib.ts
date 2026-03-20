@@ -1,17 +1,17 @@
-import {glob} from 'glob';
+import { glob } from 'glob';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
-import {TextDocument} from 'vscode-languageserver-textdocument';
-import type {Diagnostic, Hover} from 'vscode-languageserver-types';
+import { TextDocument } from 'vscode-languageserver-textdocument';
+import type { Diagnostic, Hover } from 'vscode-languageserver-types';
 
-import {YAMLHover} from 'yaml-language-server/lib/esm/languageservice/services/yamlHover';
-import {YAMLSchemaService} from 'yaml-language-server/lib/esm/languageservice/services/yamlSchemaService';
-import {YAMLValidation} from 'yaml-language-server/lib/esm/languageservice/services/yamlValidation';
-import {WorkspaceContextService} from 'yaml-language-server/lib/esm/languageservice/yamlLanguageService';
+import { YAMLHover } from 'yaml-language-server/lib/esm/languageservice/services/yamlHover';
+import { YAMLSchemaService } from 'yaml-language-server/lib/esm/languageservice/services/yamlSchemaService';
+import { YAMLValidation } from 'yaml-language-server/lib/esm/languageservice/services/yamlValidation';
+import { WorkspaceContextService } from 'yaml-language-server/lib/esm/languageservice/yamlLanguageService';
 
-import {createSchemaRequestHandler} from './schema-handler';
-import {readJson} from './util';
+import { createSchemaRequestHandler } from './schema-handler';
+import { readJson } from './util';
 
 export class ConsoleTelemetry {
     constructor() {}
