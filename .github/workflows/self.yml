@@ -13,9 +13,9 @@ jobs:
     name: Run Myself
     runs-on: ubuntu-latest
     steps:
-    - name: Run Myself
+    - name: Run Myself (main)
       if: github.ref_name == 'main'
       uses: ds-ukassel/yaml-ls-check@main
-    - name: Run Myself
+    - name: Run Myself (develop)
       if: github.ref_name == 'develop'
       uses: ds-ukassel/yaml-ls-check@develop
