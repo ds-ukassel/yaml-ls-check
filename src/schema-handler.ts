@@ -2,8 +2,8 @@ import * as fs from 'fs';
 
 import { URI } from 'vscode-uri';
 
-import { isRelativePath } from 'yaml-language-server/lib/esm/languageservice/utils/paths';
-import { SchemaRequestService } from 'yaml-language-server/lib/esm/languageservice/yamlLanguageService';
+import { isRelativePath } from 'yaml-language-server/lib/umd/languageservice/utils/paths';
+import { SchemaRequestService } from 'yaml-language-server/lib/umd/languageservice/yamlLanguageService';
 import { relativeToAbsolutePath, trimStartChars } from './util';
 
 export function createSchemaRequestHandler(rootPath?: string): SchemaRequestService {
