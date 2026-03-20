@@ -1,21 +1,16 @@
 # yaml-language-server: $schema=https://www.schemastore.org/github-workflow.json
 
-name: Run Myself
+name: Run Myself (main)
 
 on:
   push:
     branches:
       - main
-      - develop
 
 jobs:
   self:
     name: Run Myself
     runs-on: ubuntu-latest
     steps:
-    - name: Run Myself (main)
-      if: github.ref_name == 'main'
+    - name: Run Myself
       uses: ds-ukassel/yaml-ls-check@main
-    - name: Run Myself (develop)
-      if: github.ref_name == 'develop'
-      uses: ds-ukassel/yaml-ls-check@develop

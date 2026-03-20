@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://www.schemastore.org/github-workflow.json
+
+name: Run Myself (develop)
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  self:
+    name: Run Myself
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run Myself (develop)
+      uses: ds-ukassel/yaml-ls-check@develop
