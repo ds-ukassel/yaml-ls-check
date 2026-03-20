@@ -16,11 +16,9 @@ await build({
 
     platform: "node",
     target: "node24",
-    format: "cjs",
+    format: "esm",
     packages: "external",
-    mainFields: ["module", "main"],
 
     sourcemap: false,
-    legalComments: 'inline',
     logLevel: "info",
 });
