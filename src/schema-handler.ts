@@ -44,6 +44,8 @@ export function createSchemaRequestHandler(rootPath?: string): SchemaRequestServ
         }
 
         const response = await fetch(uri);
-        return response.ok ? response.text() : Promise.reject(`Unable to load schema at ${uri}: ${response.statusText}`);
+        return response.ok
+            ? response.text()
+            : Promise.reject(`Unable to load schema at ${uri}: ${response.statusText}`);
     };
 }
