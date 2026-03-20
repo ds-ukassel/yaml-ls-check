@@ -16,6 +16,7 @@ outputs:
 runs:
   using: 'node24'
   main: 'github-action/dist/index.js'
+  pre: npm install vscode-json-languageservice jsonc-parser
 branding:
   color: green
   icon: file-text
