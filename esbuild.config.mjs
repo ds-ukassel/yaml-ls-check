@@ -7,10 +7,10 @@ await rm(outdir, {recursive: true, force: true});
 
 await build({
     entryPoints: ["github-action/index.ts"],
-    outfile: "github-action/dist/index.js",
+    outfile: "github-action/dist/index.mjs",
 
     bundle: true,
-    minify: true,
+    minify: false,
     treeShaking: true,
     lineLimit: 120,
 

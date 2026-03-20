@@ -1,23 +1,22 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import {glob} from 'glob';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 
-import { YAMLSchemaService } from 'yaml-language-server/out/server/src/languageservice/services/yamlSchemaService';
-import { YAMLValidation } from 'yaml-language-server/out/server/src/languageservice/services/yamlValidation';
-import { YAMLHover } from 'yaml-language-server/out/server/src/languageservice/services/yamlHover';
-import { WorkspaceContextService } from 'yaml-language-server/out/server/src/languageservice/yamlLanguageService';
-import { TextDocument } from 'vscode-languageserver-textdocument';
-import { Diagnostic, Hover } from 'vscode-languageserver-types';
+import {TextDocument} from 'vscode-languageserver-textdocument';
+import type {Diagnostic, Hover} from 'vscode-languageserver-types';
 
-import { readJson } from './util';
-import { createSchemaRequestHandler } from './schema-handler';
-import { glob } from 'glob';
-import { TelemetryEvent } from 'yaml-language-server/out/server/src/languageservice/telemetry';
-import { YamlVersion } from 'yaml-language-server/out/server/src/languageservice/parser/yamlParser07';
+import {YAMLHover} from 'yaml-language-server/lib/esm/languageservice/services/yamlHover';
+import {YAMLSchemaService} from 'yaml-language-server/lib/esm/languageservice/services/yamlSchemaService';
+import {YAMLValidation} from 'yaml-language-server/lib/esm/languageservice/services/yamlValidation';
+import {WorkspaceContextService} from 'yaml-language-server/lib/esm/languageservice/yamlLanguageService';
+
+import {createSchemaRequestHandler} from './schema-handler';
+import {readJson} from './util';
 
 export class ConsoleTelemetry {
     constructor() {}
 
-    send(event: TelemetryEvent): void {
+    send(event: unknown): void {
         console.error('send:', event);
     }
     sendError(name: string, properties: unknown): void {
@@ -33,7 +32,7 @@ export interface SchemaMapping {
 }
 
 export interface BaseSettings {
-    yamlVersion?: YamlVersion;
+    yamlVersion?: '1.1' | '1.2';
 }
 
 export interface SettingsWithRoot extends BaseSettings {

@@ -17,6 +17,9 @@ importers:
       commander:
         specifier: ^14.0.3
         version: 14.0.3
+      extensionless:
+        specifier: ^2.0.6
+        version: 2.0.6
       glob:
         specifier: ^13.0.6
         version: 13.0.6
@@ -30,8 +33,8 @@ importers:
         specifier: ^7.3.0
         version: 7.3.0(marked@15.0.12)
       vscode-json-languageservice:
-        specifier: ^5.7.2
-        version: 5.7.2
+        specifier: ~4.1.8
+        version: 4.1.8
       vscode-languageserver-textdocument:
         specifier: ^1.0.12
         version: 1.0.12
@@ -42,7 +45,7 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       yaml-language-server:
-        specifier: 1.21.0
+        specifier: ^1.21.0
         version: 1.21.0
     devDependencies:
       '@types/jest':
@@ -1247,6 +1250,9 @@ packages:
     resolution: {integrity: sha512-1zQrciTiQfRdo7qJM1uG4navm8DayFa2TgCSRlzUyNkhcJ6XUZF3hjnpkyr3VhAqPH7i/9GkG7Tv5abz6fqz0Q==}
     engines: {node: ^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0}
 
+  extensionless@2.0.6:
+    resolution: {integrity: sha512-Kri4UehTAnQzYpM2gySya2nsCBEChxstgtKtOqR1nqZpF0HYM+BZXaeua9uUhE4Z0CE4kfZp+0JFhKL3SsuKFA==}
+
   fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
 
@@ -2427,9 +2433,6 @@ packages:
   vscode-json-languageservice@4.1.8:
     resolution: {integrity: sha512-0vSpg6Xd9hfV+eZAaYN63xVVMOTmJ4GgHxXnkLCh+9RsQBkWKIghzLhW2B9ebfG+LQQg8uLtsQ2aUKjTgE+QOg==}
     engines: {npm: '>=7.0.0'}
-
-  vscode-json-languageservice@5.7.2:
-    resolution: {integrity: sha512-WtKRDtJfFEmLrgtu+ODexOHm/6/krRF0k6t+uvkKIKW1Jh9ZIyxZQwJJwB3qhrEgvAxa37zbUg+vn+UyUK/U2w==}
 
   vscode-jsonrpc@8.2.0:
     resolution: {integrity: sha512-C+r0eKJUIfiDIfwJhria30+TYWPtuHJXHtI7J0YlOmKAo7ogxP20T0zxB7HZQIFhIyvoBPwWskjxrvAtfjyZfA==}
@@ -3862,6 +3865,8 @@ snapshots:
       jest-mock: 30.3.0
       jest-util: 30.3.0
 
+  extensionless@2.0.6: {}
+
   fast-deep-equal@3.1.3: {}
 
   fast-json-stable-stringify@2.1.0: {}
@@ -5262,14 +5267,6 @@ snapshots:
       vscode-languageserver-textdocument: 1.0.12
       vscode-languageserver-types: 3.17.5
       vscode-nls: 5.2.0
-      vscode-uri: 3.1.0
-
-  vscode-json-languageservice@5.7.2:
-    dependencies:
-      '@vscode/l10n': 0.0.18
-      jsonc-parser: 3.3.1
-      vscode-languageserver-textdocument: 1.0.12
-      vscode-languageserver-types: 3.17.5
       vscode-uri: 3.1.0
 
   vscode-jsonrpc@8.2.0: {}
