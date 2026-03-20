@@ -1,7 +1,6 @@
 const cwd = process.cwd();
-require('child_process').spawnSync('npm', [
+require('child_process').spawnSync('corepack', [
+    'pnpm',
     'install',
-    '-g',
-    'vscode-json-languageservice',
-    'jsonc-parser'
+    '--prod',
 ], {stdio: [0, 1, 2], cwd});

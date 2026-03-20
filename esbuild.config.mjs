@@ -17,12 +17,8 @@ await build({
     platform: "node",
     target: "node24",
     format: "cjs",
-    packages: "bundle",
+    packages: "external",
     mainFields: ["module", "main"],
-    external: [
-        "vscode-json-languageservice",
-        "jsonc-parser",
-    ],
 
     sourcemap: false,
     legalComments: 'inline',
