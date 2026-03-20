@@ -32,7 +32,7 @@
         "start": "ts-node src/cli.ts",
         "clean": "rimraf dist",
         "build:lib": "tsc",
-        "build:action": "rimraf github-action/dist && esbuild github-action/index.ts --bundle --minify --platform=node --target=node24 --line-limit=120 --outfile=github-action/dist/index.js",
+        "build:action": "cd github-action && rimraf dist && webpack",
         "build": "npm-run-all clean build:lib build:action",
         "format": "prettier --write '**/*.ts'",
         "lint": "prettier --check '**/*.ts'",
@@ -51,19 +51,23 @@
         "ts-jest": "^29.4.6",
         "ts-loader": "^9.5.4",
         "ts-node": "^10.9.2",
-        "typescript": "^5.9.3"
+        "typescript": "^5.9.3",
+        "webpack": "^5.105.4",
+        "webpack-cli": "^7.0.2"
     },
     "dependencies": {
-        "@actions/core": "^3.0.0",
+        "@actions/core": "^2.0.3",
         "commander": "^14.0.3",
+        "extensionless": "^2.0.6",
         "glob": "^13.0.6",
+        "jsonc-parser": "^3.3.1",
         "marked": "^15.0.12",
         "marked-terminal": "^7.3.0",
         "vscode-json-languageservice": "^5.7.2",
         "vscode-languageserver-textdocument": "^1.0.12",
         "vscode-languageserver-types": "^3.17.5",
         "vscode-uri": "^3.1.0",
-        "yaml-language-server": "1.21.0"
+        "yaml-language-server": "^1.21.0"
     },
     "resolutions": {
         "lodash@^4": "^4.17.23"

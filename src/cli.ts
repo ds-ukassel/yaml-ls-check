@@ -12,7 +12,11 @@ async function run() {
         .description('Validate YAML files of a directory.')
         .action(async (rootPath, excludedPatterns, options) => {
             if (rootPath) {
-                const errors = await validateDirectory({ yamlVersion: options.yamlVersion }, rootPath, excludedPatterns["exclude"] ?? []);
+                const errors = await validateDirectory(
+                    { yamlVersion: options.yamlVersion },
+                    rootPath,
+                    excludedPatterns['exclude'] ?? [],
+                );
                 if (errors !== undefined && errors.length > 0) {
                     process.exit(1);
                 }

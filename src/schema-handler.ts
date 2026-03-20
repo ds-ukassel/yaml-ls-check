@@ -2,9 +2,9 @@ import * as fs from 'fs';
 
 import { URI } from 'vscode-uri';
 
-import { isRelativePath } from 'yaml-language-server/out/server/src/languageservice/utils/paths';
-import { SchemaRequestService } from 'yaml-language-server/out/server/src/languageservice/yamlLanguageService';
-import { trimStartChars, relativeToAbsolutePath } from './util';
+import { isRelativePath } from 'yaml-language-server/lib/umd/languageservice/utils/paths';
+import { SchemaRequestService } from 'yaml-language-server/lib/umd/languageservice/yamlLanguageService';
+import { relativeToAbsolutePath, trimStartChars } from './util';
 
 export function createSchemaRequestHandler(rootPath?: string): SchemaRequestService {
     return async (uri: string) => {
@@ -44,6 +44,8 @@ export function createSchemaRequestHandler(rootPath?: string): SchemaRequestServ
         }
 
         const response = await fetch(uri);
-        return response.ok ? response.text() : Promise.reject(`Unable to load schema at ${uri}: ${response.statusText}`);
+        return response.ok
+            ? response.text()
+            : Promise.reject(`Unable to load schema at ${uri}: ${response.statusText}`);
     };
 }
