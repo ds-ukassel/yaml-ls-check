@@ -70,6 +70,7 @@
         "yaml-language-server": "^1.21.0"
     },
     "resolutions": {
-        "lodash@^4": "^4.17.23"
+        "lodash@^4": "^4.17.23",
+        "yaml@^2": "^2.8.3"
     }
 }
