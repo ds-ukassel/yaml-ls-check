@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2018",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "target": "ES2024",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "declaration": true,
-    "outDir": "dist",
-    "lib" : [ "es2018" ],
+    "rootDir": "./",
+    "outDir": "./dist/",
+    "lib" : [ "ES2024" ],
     "isolatedModules": true,
     "skipLibCheck": true,
     "strict": true,
