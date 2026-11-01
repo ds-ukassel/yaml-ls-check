@@ -59,7 +59,7 @@
         "@actions/core": "^2.0.3",
         "commander": "^15.0.0",
         "extensionless": "^2.0.6",
-        "glob": "^13.0.6",
+        "glob": "^14.0.2",
         "jsonc-parser": "^3.3.1",
         "marked": "^18.1.2",
         "marked-terminal": "^7.3.1",
